@@ -1,0 +1,33 @@
+
+{
+  "name": "gulp-indent",
+  "version": "1.0.0",
+  "description": "Indent piped files",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "author": {
+    "name": "Joao Dias",
+    "email": "joao.l.d.a@hotmail.com",
+    "url": "https://github.com/JohnyDays"
+  },
+  "repository": "JohnyDays/gulp-indent",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "through2": "*",
+    "gulp-util": "~2.2.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "coveralls": "*",
+    "event-stream": "*",
+    "should": "~2.1.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "license": "MIT"
+}
