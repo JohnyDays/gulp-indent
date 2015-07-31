@@ -7,6 +7,9 @@ gutil = require("gulp-util")
 # * tabs: false
 # * amount: 2
 
+isEmptyLine = (string)->
+    return string is "" or string is "\r"
+
 module.exports = (options={}) ->
   
   options.tabs ?= false
@@ -35,8 +38,8 @@ module.exports = (options={}) ->
       indentation += character for number in [0...options.amount]
       # Split the file into lines
       lines = file.contents.toString().split "\n"
-      # Add the indentation to the lines
-      lines = (indentation+line for line in lines)
+      # Add the indentation to the lines, if they aren't empty.
+      lines = ((if !isEmptyLine(line)  then indentation+line else line) for line in lines )
       # Replace the file contents
       file.contents = new Buffer(lines.join "\n")
       # Return the file to the stream
