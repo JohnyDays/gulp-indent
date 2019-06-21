@@ -1,5 +1,5 @@
 through = require("through2")
-gutil = require("gulp-util")
+PluginError = require("plugin-error")
 
 # gulp-indent
 # Indents piped files
@@ -26,7 +26,7 @@ module.exports = (options={}) ->
 
     # Error if file is a stream
     if file.isStream()
-      @emit "error", new gutil.PluginError("gulp-indent", "Stream content is not supported")
+      @emit "error", new PluginError("gulp-indent", "Stream content is not supported")
       return done()
   
     # Indent the file
